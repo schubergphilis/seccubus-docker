@@ -75,6 +75,6 @@ You can set the following environment variables:
 * SMTPSERVER - IP address or host name of an SMTP server to be used for notifications
 * SMTPFROM - From address used in notifications
 * TICKETURL_HEAD/TICKETURL_TAIL - If these are set ticket numberrs will be linked to this URL
-  - E.g. TICKERURL_HEAD = https://jira.atlassian.com/projects/SECC/issues/
+  - E.g. TICKERURL_HEAD = https://jira.example.com/projects/SECC/issues/
   - TICKERURL_TAIL = ?filter=allopenissues
-  - Ticket SECC-666 would be linked to https://jira.atlassian.com/projects/SECC/issues/SECC-666?filter=allopenissues
+  - Ticket SECC-666 would be linked to https://jira.example.com/projects/SECC/issues/SECC-666?filter=allopenissues
