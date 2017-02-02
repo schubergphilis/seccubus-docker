@@ -8,6 +8,9 @@ DBNAME=${DBNAME:-'seccubus'}
 DBUSER=${DBUSER:-'seccubus'}
 DBPASS=${DBPASS:-'seccubus'}
 
+if [[ "$1" == "scan" ]]; then
+    STACK="perl"
+fi
 
 # Check sanity of parameters
 if [[ "$STACK" != "full" && "$STACK" != "front" && "$STACK" != "api" && "$STACK" != "web" && \
