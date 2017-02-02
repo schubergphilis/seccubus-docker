@@ -68,18 +68,13 @@ You can set the following environment variables:
   - api - Start apache to serve the json api at / (starts MariaDB too if required)
   - web - Start apache to serve both the html/javascript frontend and the json
   - perl - Do not start apache, just use this container as an perl backend
-
- * DBHOST, DBPORT, DBNAME, DBUSER, DBPASS - Database connection parameters
-   - If DBHOST/DBPORT are set to 127.0.0.1/3306 the local MariaDB instance is started
-
- * APIURL - Path to the API url
-   - Set this if your set STACK to front to redirect the API calls to an alternative relative or absolute URL.
-
- * SMTPSERVER - IP address or host name of an SMTP server to be used for notifications
-
- * SMTPFROM - From address used in notifications
-
- * TICKETURL_HEAD/TICKETURL_TAIL - If these are set ticket numberrs will be linked to this URL
-   - E.g. TICKERURL_HEAD = https://jira.atlassian.com/projects/SECC/issues/
-   - TICKERURL_TAIL = ?filter=allopenissues
-   - Ticket SECC-666 would be linked to https://jira.atlassian.com/projects/SECC/issues/SECC-666?filter=allopenissues
+* DBHOST, DBPORT, DBNAME, DBUSER, DBPASS - Database connection parameters
+  - If DBHOST/DBPORT are set to 127.0.0.1/3306 the local MariaDB instance is started
+* APIURL - Path to the API url
+  - Set this if your set STACK to front to redirect the API calls to an alternative relative or absolute URL.
+* SMTPSERVER - IP address or host name of an SMTP server to be used for notifications
+* SMTPFROM - From address used in notifications
+* TICKETURL_HEAD/TICKETURL_TAIL - If these are set ticket numberrs will be linked to this URL
+  - E.g. TICKERURL_HEAD = https://jira.atlassian.com/projects/SECC/issues/
+  - TICKERURL_TAIL = ?filter=allopenissues
+  - Ticket SECC-666 would be linked to https://jira.atlassian.com/projects/SECC/issues/SECC-666?filter=allopenissues
