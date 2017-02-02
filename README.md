@@ -62,7 +62,7 @@ Other options
 ---
 You can set the following environment variables:
 
-* STACK=(full|front|api|web|perl) - Determines which part of the stack is run
+* STACK - Determines which part of the stack is run
   - full - Run everything
   - front - Start apache to serve the html/javascript frontend (this requires that the APIURL variable is set too)
   - api - Start apache to serve the json api at / (starts MariaDB too if required)
