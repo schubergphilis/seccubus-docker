@@ -23,7 +23,7 @@ docker run -it seccubus -v /some/local/dir:/var/lib/mysql /bin/bash
 Please be aware that you can only run one container at a time if you mount a local directory on /var/lib/mysql.
 
 Alternativly you cloud connect the container to a remote mysql/MariaDB database with environment viariables:
-``
+```
 docker run -ti seccubus -e DBHOST=dns.name.of.db.host \
 -e DBPOSRT=3306 \
 -e DBNAME=name.of.database \
@@ -40,6 +40,8 @@ Run the following command to start the scan 'ssllabs' in workspace 'Example' (th
 ```
 docker run -ti seccubus scan Example ssllabs
 ```
+
+Please be aware that you need soem data persistency here or the data will be stored in a local database that will be deleted whent he container terminates
 
 Show this help message
 ---

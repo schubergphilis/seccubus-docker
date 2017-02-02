@@ -1,5 +1,4 @@
 #!/bin/bash 
-#set -e
 
 STACK=${STACK:-'full'}
 DBHOST=${DBHOST:-'127.0.0.1'}
