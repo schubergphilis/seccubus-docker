@@ -78,3 +78,6 @@ You can set the following environment variables:
   - E.g. TICKERURL_HEAD = https://jira.example.com/projects/SECC/issues/
   - TICKERURL_TAIL = ?filter=allopenissues
   - Ticket SECC-666 would be linked to https://jira.example.com/projects/SECC/issues/SECC-666?filter=allopenissues
+* SSHKEY1, SSHKEY2, SSHKEY3, etc..
+  - The content of this environment variable will stored in the file /opt/seccubus/.ssh/SSHKEY1 etc.
+  - You can use this mechanism to provide ssh keys that are used to start remote scans

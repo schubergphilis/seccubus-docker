@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash -x
 
 STACK=${STACK:-'full'}
 DBHOST=${DBHOST:-'127.0.0.1'}
@@ -48,6 +48,20 @@ if [[ "$STACK" == "full" || "$STACK" == "front" || "$STACK" == "api" || "$STACK"
     # Need to start apache
     apachectl -DFOREGROUND &
 fi
+
+mkdir ~seccubus/.ssh
+chmod 700 ~seccubus/.ssh
+for KEY in `env|grep SSHKEY`; do
+    SSHKEYNAME=$(echo $KEY|sed 's/\=.*$//')
+    SSHKEYVAL=$(echo $KEY|sed 's/^.*\=//')
+    echo $VAL > ~seccubus/.ssh/$SSHKEYNAME
+    chmod 600 ~seccubus/.ssh/$SSHKEYNAME
+    export $SSHKEYNAME=""
+    SSHKEYNAME=""
+    SSHKEYVAL=""
+    KEY=""
+done
+chown -R seccubus:seccubus ~seccubus/.ssh
 
 cat <<EOF >/opt/seccubus/etc/config.xml
 <seccubus>
