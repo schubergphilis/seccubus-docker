@@ -72,6 +72,8 @@ You can set the following environment variables:
   - If DBHOST/DBPORT are set to 127.0.0.1/3306 the local MariaDB instance is started
 * APIURL - Path to the API url
   - Set this if your set STACK to front to redirect the API calls to an alternative relative or absolute URL.
+* BASEURI - Base URI for seccubus
+  - Server the application at the value provided
 * SMTPSERVER - IP address or host name of an SMTP server to be used for notifications
 * SMTPFROM - From address used in notifications
 * TICKETURL_HEAD/TICKETURL_TAIL - If these are set ticket numberrs will be linked to this URL
@@ -81,3 +83,5 @@ You can set the following environment variables:
 * SSHKEY1, SSHKEY2, SSHKEY3, etc..
   - The content of this environment variable will stored in the file /opt/seccubus/.ssh/SSHKEY1 etc.
   - You can use this mechanism to provide ssh keys that are used to start remote scans
+* HTTP_AUTH_HEADER - Set the http authentication header
+  - If you are using something like OpenAM to authenticate your users, this allows you to set which http request header contains the user that OpenAM detected

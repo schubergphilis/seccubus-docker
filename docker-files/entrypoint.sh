@@ -45,6 +45,10 @@ if [[ "$STACK" == "api" ]] ; then
 fi
 
 if [[ "$STACK" == "full" || "$STACK" == "front" || "$STACK" == "api" || "$STACK" == "web" ]]; then
+    # Do we need to listen on a specific URI
+    if [[ ! -z $BASEURI ]]; then
+        sed -i.bak "s#^Alias /#Alias $BASEURI#" /etc/httpd/conf.d/seccubus.conf
+    fi
     # Need to start apache
     apachectl -DFOREGROUND &
 fi
@@ -88,6 +92,9 @@ cat <<EOF >/opt/seccubus/etc/config.xml
         <url_head>$TICKETURL_HEAD</url_head>
         <url_tail>$TICKETURL_TAIL</url_tail>
     </tickets>
+    <auth>
+        <http_auth_header>$HTTP_AUTH_HEADER</http_auth_header>
+    </auth>
 </seccubus>
 EOF
 
@@ -122,6 +129,7 @@ fi
 
 case $1 in
 "")
+    touch /var/log/httpd/access_log /var/log/httpd/error_log
     tail -f /var/log/httpd/*log
     ;;
 "scan")
